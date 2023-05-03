@@ -1,0 +1,24 @@
+{
+  "name": "tb-mysql",
+  "version": "2.0.0",
+  "description": "Teamblind mysql module",
+  "main": "dist/BtMysql.js",
+  "types": "dist/BtMysql.d.ts",
+  "dependencies": {
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "14.18.2",
+    "@types/mocha": "^9.0.0",
+    "mocha": "^4.1.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2",
+    "extend": "^3.0.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "mocha"
+  },
+  "private": true
+}
