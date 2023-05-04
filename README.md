@@ -58,15 +58,15 @@
 2. Create providers
    ```typescript
    import { Inject, Injectable } from '@nestjs/common';
-   import { TbMysql } from 'tb-mysql';
-   import { TbMysqlConnectionPool } from 'tb-mysql';
+   import { BtMysql } from 'bt-ts-mysql';
+   import { BtMysqlConnectionPool } from 'bt-ts-mysql';
    import { MysqlReadConfig } from '../../config/mysql/MysqlReadConfig';
 
    @Injectable()
    export class MysqlReadClientService {
       public readClient: TbMysqlConnectionPool | null;
       constructor(@Inject(MysqlReadConfig) private readonly readConfig: MysqlReadConfig) {
-         TbMysql.buildConnectionPool(readConfig.configuration, true)
+         BtMysql.buildConnectionPool(readConfig.configuration, true)
             .then((connection) => {
                 this.readClient = connection;
          })
@@ -82,16 +82,16 @@
    ```typescript
    import { Inject, Injectable } from '@nestjs/common';
    import { MysqlReadClientService } from '../../providers/mysql/MysqlReadClientService';
-   import { TbMysqlAbstractDao } from 'tb-mysql';
+   import { BtMysqlAbstractDao } from 'bt-ts-mysql';
 
    @Injectable()
    export abstract class AbstractDbModel {
-      protected readDao: TbMysqlAbstractDao;
+      protected readDao: BtMysqlAbstractDao;
 
       protected constructor(
         @Inject(MysqlReadClientService) protected readonly readClient: MysqlReadClientService
       ) {
-        this.readDao = new TbMysqlAbstractDao(readClient.readClient);
+        this.readDao = new BtMysqlAbstractDao(readClient.readClient);
       }
    }
    ```
