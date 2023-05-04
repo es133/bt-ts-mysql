@@ -39,7 +39,6 @@ export class BtMysqlAbstractDao {
         try {
             if (this.client) {
                 let [rows, fields] = await this.client.execute(query, value);
-                console.log('RESULT:', rows);
                 return <BtMysqlModifyResult>rows;
             }
             return null;

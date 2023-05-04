@@ -16,20 +16,6 @@ export class BtMysqlConnection {
         //console.log('CONNECTION:', this[_connection]);
     }
 
-    /*
-    get connection():Connection | null {
-        try {
-            if (this.connection) {
-                return this.connection
-            } else {
-                return null;
-            }
-        } catch (exception) {
-            throw exception;
-        }
-    }
-     */
-
     getConnection():Connection | null {
         try {
             if (this.connection) {

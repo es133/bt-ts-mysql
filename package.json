@@ -1,11 +1,11 @@
 {
-  "name": "tb-mysql",
-  "version": "2.0.0",
-  "description": "Teamblind mysql module",
+  "name": "@es133/bt-ts-mysql",
+  "version": "1.0.0",
+  "description": "mysql2 wrapping library for typescript",
   "main": "dist/BtMysql.js",
   "types": "dist/BtMysql.d.ts",
   "dependencies": {
-    "mysql2": "^2.3.3"
+    "mysql2": "^3.2.4"
   },
   "devDependencies": {
     "@types/node": "14.18.2",
@@ -20,5 +20,14 @@
     "prepare": "npm run build",
     "test": "mocha"
   },
-  "private": true
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/es133/bt-ts-mysql"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "author": "bugshot@gmail.com",
+  "license": "MIT license"
+
 }
